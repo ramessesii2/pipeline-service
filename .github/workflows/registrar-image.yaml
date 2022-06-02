@@ -12,6 +12,9 @@ jobs:
     permissions:
       contents: read
       packages: write
+    defaults:
+      run:
+        working-directory: ./images/kcp-registrar
     outputs:
       sha_short: ${{ steps.vars.outputs.sha_short }}
 
@@ -29,7 +32,6 @@ jobs:
         with:
           image: kcp-registrar
           tags: v1 ${{ steps.vars.outputs.sha_short }} ${{ github.ref_name }}
-          context: './images/kcp-registrar/'
           containerfiles: |
             ./Dockerfile
 
