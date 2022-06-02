@@ -12,9 +12,6 @@ jobs:
     permissions:
       contents: read
       packages: write
-    defaults:
-      run:
-        working-directory: ./images/kcp-registrar
     outputs:
       sha_short: ${{ steps.vars.outputs.sha_short }}
 
@@ -29,6 +26,7 @@ jobs:
       - name: Build kcp-registrar Image
         id: build-image
         uses: redhat-actions/buildah-build@v2
+        working-directory: ./images/kcp-registrar
         with:
           image: kcp-registrar
           tags: v1 ${{ steps.vars.outputs.sha_short }} ${{ github.ref_name }}
