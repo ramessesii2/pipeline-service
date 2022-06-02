@@ -29,9 +29,8 @@ jobs:
         with:
           image: kcp-registrar
           tags: v1 ${{ steps.vars.outputs.sha_short }} ${{ github.ref_name }}
-          context: /images/kcp-registrar
           containerfiles: |
-            ./Dockerfile
+            ./images/kcp-registrar/Dockerfile
 
       - name: Push to ghcr.io
         id: push-to-ghcr
