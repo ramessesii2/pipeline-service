@@ -1,6 +1,6 @@
 ---
 resources:
   - namespace.yaml
-  - pac-manager.yaml
+  - pln-svc-manager.yaml
   - role.yaml
   - rolebinding.yaml
