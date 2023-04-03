@@ -138,7 +138,7 @@ spec:
           - update-dockerfiles
         taskRef:
           name: github-open-pr
-          kind: ClusterTask
+          kind: Task
         params:
           - name: REPO_FULL_NAME
             value: "$(params.repo_owner)/$(params.repo_name)"

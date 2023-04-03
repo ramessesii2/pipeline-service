@@ -13,7 +13,8 @@ Tekton and Kubernetes provide a great infrastructure for building pipelines. The
 - Scalability: Kubernetes has made it easy to distribute the load onto many servers and scalability at cloud scale more approachable. Like everything, its control plane has however its limits.
 - Availability and geo-redundancy: Kubernetes control plane is based on an etcd cluster, which is sensible to latency between its members. This restricts what can be done in terms of geographical distribution.
 
-Work is in progress in order to solve these challenges.   
+Work is in progress in order to solve these challenges.
+here
 **KCP related work was discontinued and can be found in [kcp](https://github.com/openshift-pipelines/pipeline-service/tree/kcp) branch**
 
 ## How do I start?
