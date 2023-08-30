@@ -154,8 +154,8 @@ install_clusters() {
 install_shared_manifests() {
   CREDENTIALS_DIR="$WORKSPACE_DIR/credentials"
 
-  # if [ "$(kubectl get secret -n tekton-chains signing-secrets --ignore-not-found -o json | jq -r ".immutable")" != "true" ]; then
-  #   kubectl apply -k "$CREDENTIALS_DIR/manifests/compute/tekton-chains"
+  # if [ "$(kubectl get secret -n openshift-pipelines signing-secrets --ignore-not-found -o json | jq -r ".immutable")" != "true" ]; then
+  #   kubectl apply -k "$CREDENTIALS_DIR/manifests/compute/openshift-pipelines"
   # fi
   kubectl apply -k "$CREDENTIALS_DIR/manifests/compute/tekton-results"
 }

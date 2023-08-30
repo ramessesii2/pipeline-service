@@ -10,6 +10,8 @@ resources:
   - chains-service-monitor.yaml
   # Manully add ConfigMap and Service until PLNSRVCE-1359 is fixed
   - chains-observability-service.yaml
+  - chains-public-key-viewer.yaml
+  - chains-secrets-config.yaml
 
 ## add a patch to add app label to the tekton chains deployment
 patches:
