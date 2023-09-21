@@ -205,6 +205,8 @@ test_chains() {
   echo -n "  - Public key: "
   pipeline_name=$(kubectl create -f "$SCRIPT_DIR/manifests/test/tekton-chains/public-key.yaml" -n "$NAMESPACE" | cut -d' ' -f1)
   wait_for_pipeline "$pipeline_name" "$NAMESPACE"
+  tkn pipelinerun logs -n "$NAMESPACE" "$pipeline_name"
+  kubectl describe "$pipeline_name" -n "$NAMESPACE"
   if [ "$(kubectl get "$pipeline_name" -n "$NAMESPACE" \
     -o 'jsonpath={.status.conditions[0].reason}')" = "Succeeded" ]; then
     echo "OK"
