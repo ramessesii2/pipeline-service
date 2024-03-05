@@ -1,0 +1,18 @@
+ apiVersion: tekton.dev/v1beta1
+ 15 kind: PipelineRun
+ 16 metadata:
+ 17   name: hello-xml
+ 18   annotations:
+ 19     results.tekton.dev/resultAnnotations: |-
+ 20       {"repo": "tektoncd/results", "commit": "1a6b908"}
+ 21     results.tekton.dev/recordSummaryAnnotations: >-
+ 22       {"repo":"devfile-sample-python-basic","commit":"131c0ad5470777d2e62c45cbb871eb2335bd805c","eventType":"pull_request","pull_request-id":14}
+ 23 spec:
+ 24   pipelineSpec:
+ 25     tasks:
+ 26       - name: hello
+ 27         taskSpec:
+ 28           steps:
+ 29             - name: hello
+ 30               image: ubuntu
+ 31               script: "echo hello world!"
